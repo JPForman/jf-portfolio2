@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+
+  --color-ink-50: #f6f7fb;
+  --color-ink-100: #eceef5;
+  --color-ink-200: #d7dae6;
+  --color-ink-300: #b3b9cc;
+  --color-ink-400: #8890a8;
+  --color-ink-500: #656d87;
+  --color-ink-600: #4c536b;
+  --color-ink-700: #383d52;
+  --color-ink-800: #22253a;
+  --color-ink-900: #141628;
+  --color-ink-950: #0a0b16;
+
+  --color-accent-50: #eef5ff;
+  --color-accent-100: #dceaff;
+  --color-accent-200: #b6d4ff;
+  --color-accent-300: #83b6ff;
+  --color-accent-400: #4d8fff;
+  --color-accent-500: #2668f5;
+  --color-accent-600: #184ed1;
+  --color-accent-700: #163ea6;
+  --color-accent-800: #17357f;
+  --color-accent-900: #182f66;
+
+  --color-amber-glow: #f2b544;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in: fade-in 0.8s ease forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: var(--color-ink-50);
+  color: var(--color-ink-800);
+}
+
+.dark body {
+  background-color: var(--color-ink-950);
+  color: var(--color-ink-100);
+}
+
+::selection {
+  background-color: var(--color-accent-200);
+  color: var(--color-ink-900);
+}
+
+.dark ::selection {
+  background-color: var(--color-accent-700);
+  color: white;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-noise {
+  background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0);
+  background-size: 22px 22px;
+}
