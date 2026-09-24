@@ -4,7 +4,7 @@
 
 @theme {
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Manrope", "Inter", system-ui, sans-serif;
 
   --color-ink-50: #f6f7fb;
   --color-ink-100: #eceef5;
